@@ -4,7 +4,6 @@ import KitchenDashboard from './components/KitchenDashboard';
 import Layout from './components/Layout';
 import LandingPage from './components/LandingPage';
 import { OrderProvider } from './contexts/OrderContext';
-import { ErrorBoundary } from './components/ErrorBoundary';
 
 function App() {
   return (
