@@ -13,7 +13,7 @@ const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
-    origin: "http://localhost:5173", // Your frontend URL
+    origin: "https://table-scan.vercel.app/", // Your frontend URL
     methods: ["GET", "POST", "PATCH"],
   }
 });
