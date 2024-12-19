@@ -17,13 +17,12 @@ router.post('/', async (req, res) => {
   const order = new Order({
     tableNumber: req.body.tableNumber,
     items: req.body.items,
-    total: req.body.total
+    total: req.body.total,
   });
 
   try {
     const newOrder = await order.save();
-    // Emit the new order to all connected clients
-    req.app.get('io').emit('newOrder', newOrder);
+    req.app.get('io').emit('newOrder', newOrder); // Emit event to all connected clients
     res.status(201).json(newOrder);
   } catch (err) {
     res.status(400).json({ message: err.message });
@@ -44,8 +43,7 @@ router.patch('/:id', async (req, res) => {
     }
 
     const updatedOrder = await order.save();
-    // Emit the updated order to all connected clients
-    req.app.get('io').emit('orderUpdated', updatedOrder);
+    req.app.get('io').emit('orderUpdated', updatedOrder); // Emit event to all connected clients
     res.json(updatedOrder);
   } catch (err) {
     res.status(400).json({ message: err.message });

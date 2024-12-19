@@ -13,9 +13,9 @@ const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
-    origin: "https://table-scan.vercel.app/", // Your frontend URL
+    origin: ["https://table-scan.vercel.app", "http://localhost:5173"],
     methods: ["GET", "POST", "PATCH"],
-  }
+  },
 });
 
 const PORT = process.env.PORT || 5000;
@@ -34,7 +34,7 @@ io.on('connection', (socket) => {
   });
 });
 
-// Make io available in our routes
+// Make io available in routes
 app.set('io', io);
 
 // Routes
@@ -56,6 +56,7 @@ mongoose
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.error('MongoDB connection error:', err));
 
+// Start server
 httpServer.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
