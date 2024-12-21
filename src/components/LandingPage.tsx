@@ -91,7 +91,7 @@ export default function LandingPage() {
               >
                 <div className="mb-4">
                   <img
-                    src={`/public/images/T${tableNum}.png`} // Use the correct image name
+                    src={`/images/T${tableNum}.png`} // Use the correct image name
                     alt={`QR Code for Table ${tableNum}`}
                     className="w-24 h-24 mx-auto mb-2" // Adjust size if needed
                   />
