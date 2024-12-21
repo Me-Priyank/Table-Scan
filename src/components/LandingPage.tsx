@@ -89,6 +89,13 @@ export default function LandingPage() {
                 to={`/table/${tableNum}`}
                 className="bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 text-center block group"
               >
+                <div className="mb-4">
+                  <img
+                    src={`/public/images/T${tableNum}.png`} // Use the correct image name
+                    alt={`QR Code for Table ${tableNum}`}
+                    className="w-24 h-24 mx-auto mb-2" // Adjust size if needed
+                  />
+                </div>
                 <h2 className="text-xl font-semibold text-gray-900">
                   Table {tableNum}
                 </h2>
