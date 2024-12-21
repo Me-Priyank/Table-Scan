@@ -10,7 +10,7 @@ export default function Layout() {
         className="sticky top-0 z-50 backdrop-blur-lg bg-white/70 border-b border-gray-100"
       >
         <div className="container mx-auto px-4 py-3">
-          <Link to="/" className="inline-block">
+          <div className="inline-block">
             <motion.div
               className="flex items-center gap-2"
               whileHover={{ scale: 1.02 }}
@@ -20,7 +20,7 @@ export default function Layout() {
                 <span className="text-gray-900">MOTEL</span>
               </div>
             </motion.div>
-          </Link>
+          </div>
         </div>
       </motion.header>
       <div className="relative">
